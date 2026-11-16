@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-light: #f8fafc;
+  --color-card-light: #ffffff;
+  --color-border-light: #e2e8f0;
+  
+  /* Shared Mild Muted Navy Palette for both Patient and Caregiver Night Mode */
+  --color-bg-dark: #0c1527;
+  --color-card-dark: #142038;
+  --color-card-hover-dark: #1b2c4e;
+  --color-border-dark: #233558;
+
+  /* Dynamic Selective Mixed Color Themes */
+  --theme-primary: #0d9488;
+  --theme-secondary: #f43f5e;
+  --theme-gradient: linear-gradient(135deg, #0d9488 0%, #f43f5e 100%);
+  --theme-glow-1: rgba(13, 148, 136, 0.22);
+  --theme-glow-2: rgba(244, 63, 94, 0.18);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Accessible Text Size Settings */
+html.font-size-large {
+  font-size: 112.5%; /* 18px base */
+}
+
+html.font-size-xl {
+  font-size: 125%; /* 20px base */
+}
+
+/* High Contrast Mode */
+html.high-contrast {
+  --tw-border-opacity: 1;
+}
+
+html.high-contrast.dark {
+  background-color: #050b14 !important;
+}
+
+html.high-contrast.dark .bg-navy-900,
+html.high-contrast.dark .dark\:bg-\[\#0c1527\] {
+  background-color: #050b14 !important;
+}
+
+html.high-contrast.dark .bg-navy-800,
+html.high-contrast.dark .dark\:bg-\[\#142038\] {
+  background-color: #0d182e !important;
+  border-color: #60a5fa !important;
+}
+
+html.high-contrast.dark text,
+html.high-contrast.dark p,
+html.high-contrast.dark span,
+html.high-contrast.dark h1,
+html.high-contrast.dark h2,
+html.high-contrast.dark h3 {
+  color: #ffffff !important;
+}
+
+html.high-contrast:not(.dark) {
+  background-color: #ffffff !important;
+}
+
+html.high-contrast:not(.dark) * {
+  border-color: #0f172a !important;
+}
+
+/* Reduced Motion Mode */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Senior-Friendly Focus Outline */
+:focus-visible {
+  outline: 3px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
